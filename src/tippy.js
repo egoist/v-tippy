@@ -1,4 +1,5 @@
 import tippy from 'tippy.js'
+// eslint-disable-next-line no-unused-vars
 import assign from 'nano-assign'
 
 const hasBindingChanged = (value, oldValue) => {
@@ -10,7 +11,10 @@ const hasBindingChanged = (value, oldValue) => {
 export default (opts = {}) => {
   const init = (el, { value = {}, oldValue = {} }, vnode) => {
     if (!el.getAttribute('title')) {
-      el.setAttribute('title', value.title || vnode.data.attrs.title || opts.title)
+      el.setAttribute(
+        'title',
+        value.title || vnode.data.attrs.title || opts.title
+      )
     }
 
     if (el.tip) {
