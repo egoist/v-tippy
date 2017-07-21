@@ -43,6 +43,18 @@ You can pass **all** [Tippy.js](https://atomiks.github.io/tippyjs/) [options](ht
 
 You can also directly set `title` in the arguments: `v-tippy="{title: 'hi'}"`.
 
+### Default settings
+
+You can tweak default settings globally while installing the plugin:
+
+```js
+Vue.use(Tippy, {
+  position: 'left',
+  onShown: () => console.log('lol'),
+  // ... other options you wanna change globally
+})
+```
+
 ## Contributing
 
 1. Fork it!
