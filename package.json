@@ -1,0 +1,42 @@
+{
+  "name": "v-tippy",
+  "version": "0.0.0",
+  "description": "A tooltip directive for Vue.js based on tippy.js",
+  "repository": {
+    "url": "egoist/v-tippy",
+    "type": "git"
+  },
+  "main": "dist/tippy.common.js",
+  "cdn": "dist/tippy.min.js",
+  "unpkg": "dist/tippy.min.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "echo 'no tests!' && npm run lint",
+    "lint": "xo",
+    "prepublish": "npm run build",
+    "build": "bili --filename tippy --format umd,cjs,umdCompress --module-name Tippy --buble.objectAssign assign && npm run cp-css",
+    "cp-css": "cp node_modules/tippy.js/dist/tippy.css dist/tippy.css",
+    "example": "poi"
+  },
+  "author": "egoist <0x142857@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "nano-assign": "^1.0.0",
+    "tippy.js": "^1.1.3"
+  },
+  "devDependencies": {
+    "bili": "^0.17.0",
+    "eslint-config-rem": "^3.0.0",
+    "xo": "^0.18.0"
+  },
+  "xo": {
+    "extends": "rem"
+  },
+  "poi": {
+    "entry": "example/index.js",
+    "dist": "example/dist",
+    "homepage": "/v-tippy/"
+  }
+}
