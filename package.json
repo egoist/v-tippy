@@ -1,6 +1,6 @@
 {
   "name": "v-tippy",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A tooltip directive for Vue.js based on tippy.js",
   "repository": {
     "url": "egoist/v-tippy",
@@ -33,7 +33,9 @@
   },
   "xo": {
     "extends": "rem/prettier",
-    "ignores": ["example/**"],
+    "ignores": [
+      "example/**"
+    ],
     "rules": {
       "no-warning-comments": 0
     }
