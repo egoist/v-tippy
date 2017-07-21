@@ -2,8 +2,6 @@
 
 [![NPM version](https://img.shields.io/npm/v/v-tippy.svg?style=flat)](https://npmjs.com/package/v-tippy) [![NPM downloads](https://img.shields.io/npm/dm/v-tippy.svg?style=flat)](https://npmjs.com/package/v-tippy) [![CircleCI](https://circleci.com/gh/egoist/v-tippy/tree/master.svg?style=shield)](https://circleci.com/gh/egoist/v-tippy/tree/master)  [![donate](https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&style=flat)](https://github.com/egoist/donate)
 
-> Note: Tippy.js is very powerful but 
-
 ## Install
 
 ```bash
