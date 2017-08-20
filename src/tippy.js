@@ -11,10 +11,13 @@ const hasBindingChanged = (value, oldValue) => {
 export default (opts = {}) => {
   const init = (el, { value = {}, oldValue = {} }, vnode) => {
     if (!el.getAttribute('title')) {
-      el.setAttribute(
-        'title',
-        value.title || vnode.data.attrs.title || opts.title
-      )
+      const title = value.title || vnode.data.attrs.title || opts.title
+      if (title) {
+        el.setAttribute(
+          'title',
+          title
+        )
+      }
     }
 
     if (el.tip) {
