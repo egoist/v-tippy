@@ -7,5 +7,18 @@ Vue.use(Tippy)
 
 new Vue({
   el: '#app',
-  render: h => h(App)
+  data: {
+    show: true
+  },
+  methods: {
+    handleChange(e) {
+      this.show = e.target.checked
+    }
+  },
+  render() {
+    return <div>
+      <input type="checkbox" checked={this.show} onChange={this.handleChange} /> Toggle
+      {this.show ? <App /> : null}
+    </div>
+  }
 })

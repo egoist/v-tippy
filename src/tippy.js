@@ -42,8 +42,15 @@ export default (opts = {}) => {
     }
   }
 
+  const unbind = (el) => {
+    if (el.tip) {
+      el.tip.destroyAll()
+    }
+  }
+
   return {
-    bind: init,
-    componentUpdated: init
+    inserted: init,
+    componentUpdated: init,
+    unbind
   }
 }

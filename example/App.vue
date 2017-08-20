@@ -2,18 +2,22 @@
   <div class="app">
     <section class="s1">
       <input v-model="settings.title">
-        <select v-model="settings.position">
-          <option value="top">Top</option>
-          <option value="bottom">Bottom</option>
-          <option value="left">Left</option>
-          <option value="right">Right</option>
-        </select>
-        <button
-          :title="settings.title"
-          v-tippy="{position: settings.position, onShown: settings.onShown}"
-        >
-          hover me
-        </button>
+      <select v-model="settings.position">
+        <option value="top">Top</option>
+        <option value="bottom">Bottom</option>
+        <option value="left">Left</option>
+        <option value="right">Right</option>
+      </select>
+      <input type="checkbox" v-model="html"> Use HTML
+      <div id="html" style="display: none">
+        <strong>this is html</strong>
+      </div>
+      <button
+        :title="settings.title"
+        v-tippy="{position: settings.position, onShown: settings.onShown, html: html ? '#html' : undefined}"
+      >
+        hover me
+      </button>
     </section>
   </div>
 </template>
@@ -27,7 +31,8 @@ export default {
         title: 'Hello World!',
         position: 'bottom',
         onShown: () => console.log('shown!')
-      }
+      },
+      html: false
     }
   }
 }
