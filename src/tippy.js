@@ -13,10 +13,7 @@ export default (opts = {}) => {
     if (!el.getAttribute('title')) {
       const title = value.title || vnode.data.attrs.title || opts.title
       if (title) {
-        el.setAttribute(
-          'title',
-          title
-        )
+        el.setAttribute('title', title)
       }
     }
 
@@ -42,7 +39,7 @@ export default (opts = {}) => {
     }
   }
 
-  const unbind = (el) => {
+  const unbind = el => {
     if (el.tip) {
       el.tip.destroyAll()
     }
