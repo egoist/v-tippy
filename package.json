@@ -1,6 +1,6 @@
 {
   "name": "v-tippy",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "A tooltip directive for Vue.js based on tippy.js",
   "repository": {
     "url": "egoist/v-tippy",
