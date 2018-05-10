@@ -9,42 +9,30 @@ const hasBindingChanged = (value, oldValue) => {
 }
 
 export default (opts = {}) => {
-  const init = (el, { value = {}, oldValue = {} }, vnode) => {
-    if (!el.getAttribute('title')) {
-      const title =
-        value.title ||
-        (vnode.data.attrs && vnode.data.attrs.title) ||
-        opts.title
-      if (title) {
-        el.setAttribute('title', title)
-      }
-    }
-
-    if (el.tip) {
+  const init = (el, { value = {}, oldValue = {} }) => {
+    if (el._tippy) {
       if (hasBindingChanged(value, oldValue)) {
         // Re-initialize the element when binding value changes
         // TODO: find a way to update settings w/o recreate the tippy instance
-        el.tip.destroyAll()
-        el.tip = tippy(el, {
+        el._tippy.destroy()
+        tippy(el, {
           ...opts,
-          ...value
+          ...value,
+          dynamicTitle: true
         })
-      } else {
-        // Only update content when title changes
-        const popper = el.tip.getPopperElement(el)
-        el.tip.update(popper)
       }
     } else {
-      el.tip = tippy(el, {
+      tippy(el, {
         ...opts,
-        ...value
+        ...value,
+        dynamicTitle: true
       })
     }
   }
 
   const unbind = el => {
-    if (el.tip) {
-      el.tip.destroyAll()
+    if (el._tippy) {
+      el._tippy.destroy()
     }
   }
 

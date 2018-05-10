@@ -24,7 +24,7 @@
   "license": "MIT",
   "dependencies": {
     "nano-assign": "^1.0.0",
-    "tippy.js": "^1.1.3"
+    "tippy.js": "^2.5.2"
   },
   "devDependencies": {
     "bili": "^0.17.0",
@@ -42,7 +42,10 @@
   },
   "poi": {
     "entry": "example/index.js",
-    "dist": "example/dist",
-    "homepage": "/v-tippy/"
+    "outDir": "example/dist",
+    "publicPath": "/v-tippy/",
+    "babel": {
+      "jsx": "vue"
+    }
   }
 }

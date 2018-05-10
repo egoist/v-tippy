@@ -2,7 +2,7 @@
   <div class="app">
     <section class="s1">
       <input v-model="settings.title">
-      <select v-model="settings.position">
+      <select v-model="settings.placement">
         <option value="top">Top</option>
         <option value="bottom">Bottom</option>
         <option value="left">Left</option>
@@ -14,7 +14,7 @@
       </div>
       <button
         :title="settings.title"
-        v-tippy="{position: settings.position, onShown: settings.onShown, html: html ? '#html' : undefined}"
+        v-tippy="{placement: settings.placement, onShown: settings.onShown, html: html ? '#html' : undefined}"
       >
         hover me
       </button>
@@ -29,7 +29,7 @@ export default {
       hi: true,
       settings: {
         title: 'Hello World!',
-        position: 'bottom',
+        placement: 'bottom',
         onShown: () => console.log('shown!')
       },
       html: false
