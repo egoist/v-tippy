@@ -13,8 +13,7 @@
         <strong>this is html</strong>
       </div>
       <button
-        :title="settings.title"
-        v-tippy="{placement: settings.placement, onShown: settings.onShown, html: html ? '#html' : undefined}"
+        v-tippy="{placement: settings.placement, content:settings.title, onShown: settings.onShown, allowHTML: html ? true : false}"
       >
         hover me
       </button>

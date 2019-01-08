@@ -24,7 +24,7 @@
   "license": "MIT",
   "dependencies": {
     "nano-assign": "^1.0.0",
-    "tippy.js": "^2.5.2"
+    "tippy.js": "^3.4.0"
   },
   "devDependencies": {
     "bili": "^0.17.0",
