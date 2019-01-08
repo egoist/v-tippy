@@ -13,19 +13,15 @@ export default (opts = {}) => {
     if (el._tippy) {
       if (hasBindingChanged(value, oldValue)) {
         // Re-initialize the element when binding value changes
-        // TODO: find a way to update settings w/o recreate the tippy instance
-        el._tippy.destroy()
-        tippy(el, {
+        el._tippy.set({
           ...opts,
-          ...value,
-          dynamicTitle: true
+          ...value
         })
       }
     } else {
       tippy(el, {
         ...opts,
-        ...value,
-        dynamicTitle: true
+        ...value
       })
     }
   }
