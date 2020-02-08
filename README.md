@@ -36,7 +36,7 @@ You can pass **all** [Tippy.js](https://atomiks.github.io/tippyjs/) [options](ht
 ```vue
 <button 
   title="I'm on the left!" 
-  v-tippy="{position: 'left'}">
+  v-tippy="{placement: 'left'}">
   hover me
 </button>
 ```
@@ -47,7 +47,7 @@ You can tweak default settings globally while installing the plugin:
 
 ```js
 Vue.use(Tippy, {
-  position: 'left',
+  placement: 'left',
   onShown: () => console.log('lol'),
   // ... other options you wanna change globally
 })
